@@ -1,0 +1,32 @@
+import scipy as sio
+import matplotlib.pyplot as plt
+import scipy.io
+
+
+IMG=scipy.io.loadmat('IMAGES')
+Pic_array=IMG['IMAGES']
+
+
+class Sparsenet():
+    
+    def __init__(self, learnrate=0.01):
+        self.learnrate = learnrate
+        self.phi = np.random.randn(100, 200)
+        # normalize phi
+        # initialization
+        
+    def infer(self, X):
+        # do inference, find a
+        acts = np.zeros(10)
+        return acts
+        
+    def learn(self, X, acts):
+        dphi = 1 # -gradient of E wrt phi
+        self.phi = self.phi + self.learnrate*dphi
+    
+    def run(self, ntrials):
+        for i in range(ntrials):
+            X = 1 # random batch of 100 data points
+            acts = self.infer(X)
+            self.learn(X, acts)
+            print("Error = ") #+ current value of mean squared error or objective function
